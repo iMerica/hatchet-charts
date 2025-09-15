@@ -193,8 +193,6 @@ frontend:
     enabled: false
 
 postgres:
-  parameters:
-    max_connections: 500
   enabled: true
   auth:
     username: "hatchet"
@@ -203,6 +201,9 @@ postgres:
   tls:
     enabled: false
   primary:
+    extraEnvVars:
+      - name: POSTGRESQL_MAX_CONNECTIONS
+        value: "600"
     service:
       ports:
         postgresql: 5432
