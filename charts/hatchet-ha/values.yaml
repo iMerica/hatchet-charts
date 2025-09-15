@@ -203,10 +203,26 @@ postgres:
   primary:
     extraEnvVars:
       - name: POSTGRESQL_MAX_CONNECTIONS
-        value: "600"
+        value: "200"
     service:
       ports:
         postgresql: 5432
+
+pgbouncer:
+  enabled: true
+  auth:
+    # reuse the same creds you use for postgres
+    username: hatchet
+    password: hatchet
+  databases:
+    hatchet: "postgresql://hatchet:hatchet@postgres-postgresql:5432/hatchet"
+  service:
+    ports:
+      pgbouncer: 6432
+  config:
+    pool_mode: transaction
+    max_client_conn: 1000
+    default_pool_size: 20
 
 rabbitmq:
   enabled: true

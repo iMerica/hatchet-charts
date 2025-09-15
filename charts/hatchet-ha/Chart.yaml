@@ -42,3 +42,8 @@ dependencies:
     repository: "https://charts.bitnami.com/bitnami"
     version: "^12.13.1"
     alias: rabbitmq
+  - name: "pgbouncer"
+    condition: pgbouncer.enabled
+    repository: "https://charts.bitnami.com/bitnami"
+    version: "^1.16.0"
+    alias: pgbouncer
