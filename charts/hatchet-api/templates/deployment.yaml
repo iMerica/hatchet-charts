@@ -45,8 +45,13 @@ spec:
             - sh
             - -c
             - |
-              echo "✅ Dummy init container ran successfully. Chart changes are applied."
-              sleep 2      
+              echo "🔎 Checking RabbitMQ connectivity..."
+                if nc -z -w5 hatchet-ha-rabbitmq 5672; then
+                  echo "✅ Successfully connected to RabbitMQ on hatchet-ha-rabbitmq:5672"
+                else
+                  echo "❌ Failed to connect to RabbitMQ"
+                  exit 1
+                fi
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ required "Please set a value for .Values.image.tag" .Values.image.tag }}"
