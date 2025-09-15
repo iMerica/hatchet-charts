@@ -193,6 +193,8 @@ frontend:
     enabled: false
 
 postgres:
+  parameters:
+    max_connections: 500
   enabled: true
   auth:
     username: "hatchet"
