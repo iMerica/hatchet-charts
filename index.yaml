@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   hatchet-api:
   - apiVersion: v2
-    created: "2025-09-14T21:47:22.025751-05:00"
+    created: "2025-09-14T21:55:45.945396-05:00"
     description: A Helm chart for deploying Hatchet API components on Kubernetes.
-    digest: 97e37bc97e346f24e4dce0b3235b45b5bf8c293de221acaadebe5022003fc9d5
+    digest: c7703db462222798e498695b47957defdc4063ef32f414a7ce41d3ca3245cdb2
     maintainers:
     - email: alexander@hatchet.run
       name: Hatchet Engineering
@@ -15,9 +15,9 @@ entries:
     version: 0.9.2
   hatchet-frontend:
   - apiVersion: v2
-    created: "2025-09-14T21:47:22.026227-05:00"
+    created: "2025-09-14T21:55:45.945698-05:00"
     description: A Helm chart for deploying a frontend static file server on Kubernetes.
-    digest: 4f6b590fe8b4c6e01ab8443b625ab6889fe2bce3ee33138630f51d98751772d0
+    digest: d1a1eba13e11c255c206af2ef90d7315d923629b7a238bfea6a278474c6aec6c
     maintainers:
     - email: alexander@hatchet.run
       name: Hatchet Engineering
@@ -28,7 +28,7 @@ entries:
     version: 0.9.2
   hatchet-ha:
   - apiVersion: v2
-    created: "2025-09-14T21:47:22.032797-05:00"
+    created: "2025-09-14T21:55:45.953343-05:00"
     dependencies:
     - alias: api
       condition: api.enabled
@@ -66,7 +66,7 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: ^12.13.1
     description: A Helm chart for deploying Hatchet in a high-availability configuration
-    digest: 34e431b65af7f2f2bba6b26e5426299b6a38ec2a3e6b56f13fce19fa275b1f62
+    digest: be7d45ce0ef4aaa490149538446833057aa50e14b82b30f646f02f873c9e06cd
     maintainers:
     - email: alexander@hatchet.run
       name: Hatchet Engineering
@@ -75,4 +75,4 @@ entries:
     urls:
     - hatchet-ha-0.9.2.tgz
     version: 0.9.2
-generated: "2025-09-14T21:47:22.02509-05:00"
+generated: "2025-09-14T21:55:45.944531-05:00"
