@@ -39,7 +39,7 @@ spec:
       priorityClassName: "{{ .Values.priorityClassName }}"
       {{- end }}
       initContainers:
-        - name: dummy-init
+        - name: rabbitmq-check
           image: busybox:1.36
           command:
             - sh
