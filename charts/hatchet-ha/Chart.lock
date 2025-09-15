@@ -20,5 +20,8 @@ dependencies:
 - name: rabbitmq
   repository: https://charts.bitnami.com/bitnami
   version: 12.15.0
-digest: sha256:138492c4171a2540ff2c7531a80b39b369433d8ab350322bac11ea736c673582
-generated: "2025-04-03T13:07:41.084855-04:00"
+- name: pgbouncer
+  repository: https://icoretech.github.io/helm
+  version: 3.0.0
+digest: sha256:3fbb43fc29dfb394beb704851b07c0a20d0d0657bfcb47e70671b18e1ae8e6a6
+generated: "2025-09-14T23:32:47.832196-05:00"
