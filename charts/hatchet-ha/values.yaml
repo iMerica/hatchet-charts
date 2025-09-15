@@ -214,14 +214,16 @@ pgbouncer:
     adminUser: admin
     adminPassword: supersecret
     databases:
-      hatchet: "host=hatchet-ha-postgres port=5432 dbname=hatchet user=hatchet password=hatchet"
+      hatchet:
+        - "host=hatchet-ha-postgres"
+        - "port=5432"
+        - "dbname=hatchet"
+        - "user=hatchet"
+        - "password=hatchet"
     pgbouncer:
       pool_mode: transaction
       max_client_conn: 1000
       default_pool_size: 20
-
-  service:
-    port: 6432
 
 rabbitmq:
   enabled: true
