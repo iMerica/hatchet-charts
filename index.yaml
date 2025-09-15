@@ -1,0 +1,78 @@
+apiVersion: v1
+entries:
+  hatchet-api:
+  - apiVersion: v2
+    created: "2025-09-14T21:47:22.025751-05:00"
+    description: A Helm chart for deploying Hatchet API components on Kubernetes.
+    digest: 97e37bc97e346f24e4dce0b3235b45b5bf8c293de221acaadebe5022003fc9d5
+    maintainers:
+    - email: alexander@hatchet.run
+      name: Hatchet Engineering
+    name: hatchet-api
+    type: application
+    urls:
+    - hatchet-api-0.9.2.tgz
+    version: 0.9.2
+  hatchet-frontend:
+  - apiVersion: v2
+    created: "2025-09-14T21:47:22.026227-05:00"
+    description: A Helm chart for deploying a frontend static file server on Kubernetes.
+    digest: 4f6b590fe8b4c6e01ab8443b625ab6889fe2bce3ee33138630f51d98751772d0
+    maintainers:
+    - email: alexander@hatchet.run
+      name: Hatchet Engineering
+    name: hatchet-frontend
+    type: application
+    urls:
+    - hatchet-frontend-0.9.2.tgz
+    version: 0.9.2
+  hatchet-ha:
+  - apiVersion: v2
+    created: "2025-09-14T21:47:22.032797-05:00"
+    dependencies:
+    - alias: api
+      condition: api.enabled
+      name: hatchet-api
+      repository: file://../hatchet-api
+      version: ^0.9.2
+    - alias: grpc
+      condition: grpc.enabled
+      name: hatchet-api
+      repository: file://../hatchet-api
+      version: ^0.9.2
+    - alias: controllers
+      condition: controllers.enabled
+      name: hatchet-api
+      repository: file://../hatchet-api
+      version: ^0.9.2
+    - alias: scheduler
+      condition: scheduler.enabled
+      name: hatchet-api
+      repository: file://../hatchet-api
+      version: ^0.9.2
+    - alias: frontend
+      condition: frontend.enabled
+      name: hatchet-frontend
+      repository: file://../hatchet-frontend
+      version: ^0.9.2
+    - alias: postgres
+      condition: postgres.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: ^14.2.1
+    - alias: rabbitmq
+      condition: rabbitmq.enabled
+      name: rabbitmq
+      repository: https://charts.bitnami.com/bitnami
+      version: ^12.13.1
+    description: A Helm chart for deploying Hatchet in a high-availability configuration
+    digest: 34e431b65af7f2f2bba6b26e5426299b6a38ec2a3e6b56f13fce19fa275b1f62
+    maintainers:
+    - email: alexander@hatchet.run
+      name: Hatchet Engineering
+    name: hatchet-ha
+    type: application
+    urls:
+    - hatchet-ha-0.9.2.tgz
+    version: 0.9.2
+generated: "2025-09-14T21:47:22.02509-05:00"
